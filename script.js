@@ -1,24 +1,13 @@
 //your JS code here. If required.
-let firstName = document.getElementById('firstName');
-let lastName = document.getElementById('lastName');
-let phoneNumber = document.getElementById('phoneNumber');
-let email = document.getElementById('email');
-let submitBtn = document.getElementById('submitBtn');
-
-function onFormClick(){
-	let firstNameValue = firstName.value;
-	let lastNameValue = lastName.value;
-	let phoneNumberValue = phoneNumber.value;
-	let emailValue = email.value;
-	console.log(firstNameValue)
-
-	if(firstNameValue != "" && lastNameValue != "" && phoneNumberValue != "" && emailValue != ""){
-		
-		alert(`First Name: ${firstNameValue}  Last Name: ${lastNameValue}  Phone Number: ${phoneNumberValue}  Email: ${emailValue}`)
-	}
-}
-
-submitBtn.addEventListener('click' , onFormClick)
-
+const form = document.querySelector('#contact-form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const firstName = form.elements['First Name'].value;
+        const lastName = form.elements['Last Name'].value;
+        const phoneNumber = form.elements['Phone Number'].value;
+        const email = form.elements['Email ID'].value;
+        const message = `First Name: ${firstName}\nLast Name: ${lastName}\nPhone Number: ${phoneNumber}\nEmail ID: ${email}`;
+        alert(message);
+      });
 
 
